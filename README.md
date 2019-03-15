@@ -8,9 +8,9 @@ Assmann, Jakob J., Isla H. Myers-Smith, Albert B. Phillimore, Anne D. Bjorkman, 
 ## Contact
 Jakob Assmann 
 
-`jakobjassmann [at] gmail . com`
+Email: `jakobjassmann [at] gmail . com`
 
-[jakobjassmann.wordpress.com](https://jakobjassmann.wordpress.com/)
+Website: [jakobjassmann.wordpress.com](https://jakobjassmann.wordpress.com/)
 # Data preparation
 
 All data for the phenological observations and environmental predictors is already publicly available. The only exception is the Zackenberg plot-level phenology observations, which we have included with the data preparation scripts in this repostiorty. 
