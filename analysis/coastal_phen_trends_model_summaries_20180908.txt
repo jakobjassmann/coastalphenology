@@ -1,0 +1,587 @@
+[1] "ALEXFIORD_DRYINT_flowering_model"
+
+ Iterations = 3001:999991
+ Thinning interval  = 10
+ Sample size  = 99700 
+
+ DIC: 0 
+
+ G-structure:  ~year_fac
+
+         post.mean l-95% CI u-95% CI eff.samp
+year_fac     35.85    12.54    68.49    99461
+
+ R-structure:  ~units
+
+      post.mean l-95% CI u-95% CI eff.samp
+units     21.07    18.97    23.28    99700
+
+ Location effects: cbind(prior_visit, doy) ~ year 
+
+             post.mean   l-95% CI   u-95% CI eff.samp pMCMC
+(Intercept)     7.4448 -1067.3105  1068.3133    99700 0.986
+year            0.0892    -0.4409     0.6256    99700 0.724
+Hit button to see next summary:
+[1] "ALEXFIORD_DRYINT_green_up_model"
+
+ Iterations = 3001:999991
+ Thinning interval  = 10
+ Sample size  = 99700 
+
+ DIC: 0 
+
+ G-structure:  ~year_fac
+
+         post.mean l-95% CI u-95% CI eff.samp
+year_fac     28.84    9.388    55.88    99700
+
+ R-structure:  ~units
+
+      post.mean l-95% CI u-95% CI eff.samp
+units     9.753    8.863    10.64    93821
+
+ Location effects: cbind(prior_visit, doy) ~ year 
+
+            post.mean  l-95% CI  u-95% CI eff.samp pMCMC
+(Intercept)  553.5600 -402.6639 1517.1673   104273 0.231
+year          -0.1914   -0.6724    0.2869   104269 0.404
+Hit button to see next summary:
+[1] "ALEXFIORD_LUZSPP_flowering_model"
+
+ Iterations = 3001:999991
+ Thinning interval  = 10
+ Sample size  = 99700 
+
+ DIC: 0 
+
+ G-structure:  ~year_fac
+
+         post.mean l-95% CI u-95% CI eff.samp
+year_fac     106.2    23.81    236.7    99700
+
+ R-structure:  ~units
+
+      post.mean l-95% CI u-95% CI eff.samp
+units     13.17    9.386    17.27    99700
+
+ Location effects: cbind(prior_visit, doy) ~ year 
+
+             post.mean   l-95% CI   u-95% CI eff.samp pMCMC
+(Intercept)   827.2962 -2808.0075  4521.9517    99700 0.616
+year           -0.3207    -2.1718     1.4975    99700 0.697
+Hit button to see next summary:
+[1] "ALEXFIORD_OXYDIG_flowering_model"
+
+ Iterations = 3001:999991
+ Thinning interval  = 10
+ Sample size  = 99700 
+
+ DIC: 0 
+
+ G-structure:  ~year_fac
+
+         post.mean l-95% CI u-95% CI eff.samp
+year_fac     36.75    13.84     67.1    99700
+
+ R-structure:  ~units
+
+      post.mean l-95% CI u-95% CI eff.samp
+units     31.17    25.74    36.71    96938
+
+ Location effects: cbind(prior_visit, doy) ~ year 
+
+             post.mean   l-95% CI   u-95% CI eff.samp pMCMC
+(Intercept)   73.89305 -842.99937  992.77652    99700 0.872
+year           0.05385   -0.40502    0.51185    99700 0.805
+Hit button to see next summary:
+[1] "ALEXFIORD_OXYDIG_green_up_model"
+
+ Iterations = 3001:999991
+ Thinning interval  = 10
+ Sample size  = 99700 
+
+ DIC: 0 
+
+ G-structure:  ~year_fac
+
+         post.mean l-95% CI u-95% CI eff.samp
+year_fac     31.77    12.05    57.42    93275
+
+ R-structure:  ~units
+
+      post.mean l-95% CI u-95% CI eff.samp
+units     13.34    11.16    15.67    82631
+
+ Location effects: cbind(prior_visit, doy) ~ year 
+
+             post.mean   l-95% CI   u-95% CI eff.samp pMCMC
+(Intercept)  -167.1128 -1005.1917   707.6168    55957 0.683
+year            0.1656    -0.2713     0.5841    56067 0.422
+Hit button to see next summary:
+[1] "ALEXFIORD_PAPRAD_flowering_model"
+
+ Iterations = 3001:999991
+ Thinning interval  = 10
+ Sample size  = 99700 
+
+ DIC: 0 
+
+ G-structure:  ~year_fac
+
+         post.mean l-95% CI u-95% CI eff.samp
+year_fac     40.91    15.34    73.48    97163
+
+ R-structure:  ~units
+
+      post.mean l-95% CI u-95% CI eff.samp
+units     30.39    26.58    34.26    98684
+
+ Location effects: cbind(prior_visit, doy) ~ year 
+
+             post.mean   l-95% CI   u-95% CI eff.samp pMCMC
+(Intercept)   -63.9970 -1029.6247   852.6135    99700 0.885
+year            0.1275    -0.3315     0.6084    99700 0.572
+Hit button to see next summary:
+[1] "ALEXFIORD_PAPRAD_green_up_model"
+
+ Iterations = 3001:999991
+ Thinning interval  = 10
+ Sample size  = 99700 
+
+ DIC: 0 
+
+ G-structure:  ~year_fac
+
+         post.mean l-95% CI u-95% CI eff.samp
+year_fac     33.71    13.27    60.96    99700
+
+ R-structure:  ~units
+
+      post.mean l-95% CI u-95% CI eff.samp
+units     25.78       23    28.72    86769
+
+ Location effects: cbind(prior_visit, doy) ~ year 
+
+            post.mean  l-95% CI  u-95% CI eff.samp pMCMC
+(Intercept)  665.2349 -171.9601 1526.7329    99700 0.116
+year          -0.2476   -0.6806    0.1677    99700 0.235
+Hit button to see next summary:
+[1] "ALEXFIORD_SALARC_flowering_model"
+
+ Iterations = 3001:999991
+ Thinning interval  = 10
+ Sample size  = 99700 
+
+ DIC: 0 
+
+ G-structure:  ~year_fac
+
+         post.mean l-95% CI u-95% CI eff.samp
+year_fac     24.24    7.541    47.37    99700
+
+ R-structure:  ~units
+
+      post.mean l-95% CI u-95% CI eff.samp
+units     14.47    12.06    16.88    98012
+
+ Location effects: cbind(prior_visit, doy) ~ year 
+
+            post.mean  l-95% CI  u-95% CI eff.samp pMCMC
+(Intercept)  426.0055 -534.5008 1426.4286    99700 0.361
+year          -0.1253   -0.6230    0.3562    99700 0.586
+Hit button to see next summary:
+[1] "BARROW_CASTET_green_up_model"
+
+ Iterations = 3001:999991
+ Thinning interval  = 10
+ Sample size  = 99700 
+
+ DIC: 0 
+
+ G-structure:  ~year_fac
+
+         post.mean l-95% CI u-95% CI eff.samp
+year_fac      88.1    24.47    185.9    94555
+
+ R-structure:  ~units
+
+      post.mean l-95% CI u-95% CI eff.samp
+units     10.87    8.423    13.48    81232
+
+ Location effects: cbind(prior_visit, doy) ~ year 
+
+            post.mean  l-95% CI  u-95% CI eff.samp pMCMC
+(Intercept)  842.3413 -908.4814 2641.0653   100770 0.316
+year          -0.3381   -1.2183    0.5518   100763 0.416
+Hit button to see next summary:
+[1] "BARROW_DUPFIS_green_up_model"
+
+ Iterations = 3001:999991
+ Thinning interval  = 10
+ Sample size  = 99700 
+
+ DIC: 0 
+
+ G-structure:  ~year_fac
+
+         post.mean l-95% CI u-95% CI eff.samp
+year_fac     37.26    12.22    73.45    99700
+
+ R-structure:  ~units
+
+      post.mean l-95% CI u-95% CI eff.samp
+units     12.96     10.9    15.15    99700
+
+ Location effects: cbind(prior_visit, doy) ~ year 
+
+             post.mean   l-95% CI   u-95% CI eff.samp pMCMC
+(Intercept)  359.24074 -622.92222 1329.43036    99700 0.438
+year          -0.09296   -0.58164    0.39235    99700 0.684
+Hit button to see next summary:
+[1] "BARROW_LUZARC_flowering_model"
+
+ Iterations = 3001:999991
+ Thinning interval  = 10
+ Sample size  = 99700 
+
+ DIC: 0 
+
+ G-structure:  ~year_fac
+
+         post.mean l-95% CI u-95% CI eff.samp
+year_fac     42.66    12.01    86.08    99700
+
+ R-structure:  ~units
+
+      post.mean l-95% CI u-95% CI eff.samp
+units     42.43    35.28     50.2    99700
+
+ Location effects: cbind(prior_visit, doy) ~ year 
+
+             post.mean   l-95% CI   u-95% CI eff.samp pMCMC
+(Intercept)  1.921e+02 -8.130e+02  1.170e+03    99700 0.681
+year        -3.652e-03 -4.990e-01  4.904e-01    99700 0.989
+Hit button to see next summary:
+[1] "BARROW_LUZARC_green_up_model"
+
+ Iterations = 3001:999991
+ Thinning interval  = 10
+ Sample size  = 99700 
+
+ DIC: 0 
+
+ G-structure:  ~year_fac
+
+         post.mean l-95% CI u-95% CI eff.samp
+year_fac     28.45    8.534    56.82    99700
+
+ R-structure:  ~units
+
+      post.mean l-95% CI u-95% CI eff.samp
+units     47.53    40.35    55.09    97008
+
+ Location effects: cbind(prior_visit, doy) ~ year 
+
+            post.mean  l-95% CI  u-95% CI eff.samp pMCMC
+(Intercept)  413.1324 -411.4085 1224.4993    99700 0.293
+year          -0.1222   -0.5271    0.2892    99700 0.527
+Hit button to see next summary:
+[1] "BARROW_POAARC_green_up_model"
+
+ Iterations = 3001:999991
+ Thinning interval  = 10
+ Sample size  = 99700 
+
+ DIC: 0 
+
+ G-structure:  ~year_fac
+
+         post.mean l-95% CI u-95% CI eff.samp
+year_fac     40.21    11.63    80.47    98529
+
+ R-structure:  ~units
+
+      post.mean l-95% CI u-95% CI eff.samp
+units     73.05    62.62    84.47    97869
+
+ Location effects: cbind(prior_visit, doy) ~ year 
+
+            post.mean  l-95% CI  u-95% CI eff.samp pMCMC
+(Intercept)  487.3318 -490.6761 1448.8904    99700 0.296
+year          -0.1591   -0.6390    0.3291    99700 0.488
+Hit button to see next summary:
+[1] "BARROW_SALROT_flowering_model"
+
+ Iterations = 3001:999991
+ Thinning interval  = 10
+ Sample size  = 99700 
+
+ DIC: 0 
+
+ G-structure:  ~year_fac
+
+         post.mean l-95% CI u-95% CI eff.samp
+year_fac     47.93    16.84     91.8   100605
+
+ R-structure:  ~units
+
+      post.mean l-95% CI u-95% CI eff.samp
+units     11.81       10    13.68    98421
+
+ Location effects: cbind(prior_visit, doy) ~ year 
+
+            post.mean  l-95% CI  u-95% CI eff.samp pMCMC
+(Intercept)  451.0716 -557.0809 1494.7712    99700 0.362
+year          -0.1364   -0.6574    0.3669    99700 0.574
+Hit button to see next summary:
+[1] "BARROW_SALROT_green_up_model"
+
+ Iterations = 3001:999991
+ Thinning interval  = 10
+ Sample size  = 99700 
+
+ DIC: 0 
+
+ G-structure:  ~year_fac
+
+         post.mean l-95% CI u-95% CI eff.samp
+year_fac     37.91    11.93    75.06    99700
+
+ R-structure:  ~units
+
+      post.mean l-95% CI u-95% CI eff.samp
+units     64.48    54.57    74.52    99700
+
+ Location effects: cbind(prior_visit, doy) ~ year 
+
+             post.mean   l-95% CI   u-95% CI eff.samp pMCMC
+(Intercept)  192.27818 -765.01420 1118.03191    99700 0.670
+year          -0.01057   -0.46826    0.47134    99700 0.965
+Hit button to see next summary:
+[1] "QHI_DRYINT_flowering_model"
+
+ Iterations = 3001:999991
+ Thinning interval  = 10
+ Sample size  = 99700 
+
+ DIC: 0 
+
+ G-structure:  ~year_fac
+
+         post.mean  l-95% CI u-95% CI eff.samp
+year_fac     10.06 8.061e-17    22.27     6443
+
+ R-structure:  ~units
+
+      post.mean l-95% CI u-95% CI eff.samp
+units     34.34    26.63       43     5529
+
+ Location effects: cbind(prior_visit, doy) ~ year 
+
+             post.mean   l-95% CI   u-95% CI eff.samp  pMCMC  
+(Intercept)  874.16917   63.63133 1667.42940    64186 0.0395 *
+year          -0.34618   -0.74142    0.05706    64180 0.0909 .
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+Hit button to see next summary:
+[1] "QHI_ERIVAG_flowering_model"
+
+ Iterations = 3001:999991
+ Thinning interval  = 10
+ Sample size  = 99700 
+
+ DIC: 0 
+
+ G-structure:  ~year_fac
+
+         post.mean l-95% CI u-95% CI eff.samp
+year_fac     69.84    24.82    133.5    99700
+
+ R-structure:  ~units
+
+      post.mean l-95% CI u-95% CI eff.samp
+units      14.6    11.95    17.41    93823
+
+ Location effects: cbind(prior_visit, doy) ~ year 
+
+            post.mean  l-95% CI  u-95% CI eff.samp pMCMC
+(Intercept) 1292.4227 -690.7259 3313.1361    99700 0.186
+year          -0.5718   -1.5760    0.4171    99700 0.237
+Hit button to see next summary:
+[1] "QHI_SALARC_green_up_model"
+
+ Iterations = 3001:999991
+ Thinning interval  = 10
+ Sample size  = 99700 
+
+ DIC: 0 
+
+ G-structure:  ~year_fac
+
+         post.mean l-95% CI u-95% CI eff.samp
+year_fac     62.67    21.73    118.7    99700
+
+ R-structure:  ~units
+
+      post.mean l-95% CI u-95% CI eff.samp
+units     49.84    41.33    58.52   100741
+
+ Location effects: cbind(prior_visit, doy) ~ year 
+
+            post.mean  l-95% CI  u-95% CI eff.samp  pMCMC  
+(Intercept) 2133.2973  373.3375 3867.8696    99700 0.0207 *
+year          -0.9812   -1.8437   -0.1045    99700 0.0301 *
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+Hit button to see next summary:
+[1] "ZACKENBERG_CASTET_flowering_model"
+
+ Iterations = 3001:999991
+ Thinning interval  = 10
+ Sample size  = 99700 
+
+ DIC: 0 
+
+ G-structure:  ~year_fac
+
+         post.mean l-95% CI u-95% CI eff.samp
+year_fac     62.95     19.1    122.4    99700
+
+ R-structure:  ~units
+
+      post.mean l-95% CI u-95% CI eff.samp
+units     30.43    21.25    40.63    99700
+
+ Location effects: cbind(prior_visit, doy) ~ year 
+
+             post.mean   l-95% CI   u-95% CI eff.samp  pMCMC  
+(Intercept) 1780.52589    6.18815 3568.22664   100874 0.0502 .
+year          -0.79651   -1.68267    0.09504   100876 0.0765 .
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+Hit button to see next summary:
+[1] "ZACKENBERG_DRYOCT_flowering_model"
+
+ Iterations = 3001:999991
+ Thinning interval  = 10
+ Sample size  = 99700 
+
+ DIC: 0 
+
+ G-structure:  ~year_fac
+
+         post.mean  l-95% CI u-95% CI eff.samp
+year_fac    0.7251 2.446e-17    3.083     5667
+
+ R-structure:  ~units
+
+      post.mean l-95% CI u-95% CI eff.samp
+units       223    163.5    289.4    98652
+
+ Location effects: cbind(prior_visit, doy) ~ year 
+
+            post.mean  l-95% CI  u-95% CI eff.samp   pMCMC   
+(Intercept) 2018.6054  733.2175 3309.8684    99700 0.00271 **
+year          -0.9177   -1.5625   -0.2762    99700 0.00626 **
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+Hit button to see next summary:
+[1] "ZACKENBERG_PAPRAD_flowering_model"
+
+ Iterations = 3001:999991
+ Thinning interval  = 10
+ Sample size  = 99700 
+
+ DIC: 0 
+
+ G-structure:  ~year_fac
+
+         post.mean  l-95% CI u-95% CI eff.samp
+year_fac     31.44 5.591e-17    79.46     1366
+
+ R-structure:  ~units
+
+      post.mean l-95% CI u-95% CI eff.samp
+units     64.84    35.76    101.7    935.6
+
+ Location effects: cbind(prior_visit, doy) ~ year 
+
+             post.mean   l-95% CI   u-95% CI eff.samp  pMCMC  
+(Intercept) 1868.43555  343.75195 3374.88801    99700 0.0198 *
+year          -0.83718   -1.58777   -0.07446    99700 0.0332 *
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+Hit button to see next summary:
+[1] "ZACKENBERG_SALARC_flowering_model"
+
+ Iterations = 3001:999991
+ Thinning interval  = 10
+ Sample size  = 99700 
+
+ DIC: 0 
+
+ G-structure:  ~year_fac
+
+         post.mean l-95% CI u-95% CI eff.samp
+year_fac     6.286 4.16e-17    31.94     1552
+
+ R-structure:  ~units
+
+      post.mean l-95% CI u-95% CI eff.samp
+units     132.4    96.58    169.2     7986
+
+ Location effects: cbind(prior_visit, doy) ~ year 
+
+             post.mean   l-95% CI   u-95% CI eff.samp pMCMC
+(Intercept)  -681.9084 -1788.7865   371.7508    99700 0.202
+year            0.4256    -0.1012     0.9760    99700 0.117
+Hit button to see next summary:
+[1] "ZACKENBERG_SAXOPP_flowering_model"
+
+ Iterations = 3001:999991
+ Thinning interval  = 10
+ Sample size  = 99700 
+
+ DIC: 0 
+
+ G-structure:  ~year_fac
+
+         post.mean l-95% CI u-95% CI eff.samp
+year_fac      2.52 3.55e-17    17.51     2368
+
+ R-structure:  ~units
+
+      post.mean l-95% CI u-95% CI eff.samp
+units     43.47    19.28    69.21    10375
+
+ Location effects: cbind(prior_visit, doy) ~ year 
+
+             post.mean   l-95% CI   u-95% CI eff.samp  pMCMC  
+(Intercept) 1010.14834   53.73662 1954.65369    99700 0.0385 *
+year          -0.42918   -0.91296    0.03573    99700 0.0746 .
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+Hit button to see next summary:
+[1] "ZACKENBERG_SILACA_flowering_model"
+
+ Iterations = 3001:999991
+ Thinning interval  = 10
+ Sample size  = 99700 
+
+ DIC: 0 
+
+ G-structure:  ~year_fac
+
+         post.mean  l-95% CI u-95% CI eff.samp
+year_fac    0.4065 4.526e-17    1.489    10540
+
+ R-structure:  ~units
+
+      post.mean l-95% CI u-95% CI eff.samp
+units       221    146.5      306   100860
+
+ Location effects: cbind(prior_visit, doy) ~ year 
+
+            post.mean  l-95% CI  u-95% CI eff.samp pMCMC
+(Intercept) 1226.0068 -385.9501 2827.6658    99170 0.135
+year          -0.5238   -1.3223    0.2820    99175 0.200

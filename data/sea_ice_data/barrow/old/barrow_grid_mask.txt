@@ -1,0 +1,10 @@
+the following cells are in
+by row (x grid)
+row 81-88, all are in
+row 80, y 194-202 and 207-214
+row 79, y 208-214
+row 78, y 209-214
+row 77, y 210-214
+tow 76, y 212-214
+row 75, y 212-214
+row 74, y 212-214

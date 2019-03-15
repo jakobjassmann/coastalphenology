@@ -1,0 +1,30 @@
+summary(ZACKENBERG_SALARC_flowering_model)
+
+ Iterations = 3001:999991
+ Thinning interval  = 10
+ Sample size  = 99700 
+
+ DIC: 0 
+
+ G-structure:  ~year_fac
+
+         post.mean l-95% CI u-95% CI eff.samp
+year_fac     36.27     9.61    73.03    99700
+
+               ~plot_id
+
+        post.mean l-95% CI u-95% CI eff.samp
+plot_id     88.95    32.94    164.1    98713
+
+ R-structure:  ~units
+
+      post.mean l-95% CI u-95% CI eff.samp
+units     32.16    22.53    42.55    98221
+
+ Location effects: cbind(prior_visit, doy) ~ year 
+
+             post.mean   l-95% CI   u-95% CI eff.samp  pMCMC  
+(Intercept) 1479.48869   41.14805 2915.78381    99700 0.0451 *
+year          -0.64957   -1.36709    0.06699    99700 0.0739 .
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1

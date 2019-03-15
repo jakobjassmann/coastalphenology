@@ -1,0 +1,97 @@
+
+ Iterations = 3001:1199991
+ Thinning interval  = 10
+ Sample size  = 119700 
+
+ DIC: 0 
+
+ G-structure:  ~us(1 + snowmelt_rel_scaled + phase_temp_unmodified_rel_scaled + spring_extent_rel_scaled + year_rel_scaled):site_spp_phen
+
+                                                                                post.mean l-95% CI u-95% CI
+(Intercept):(Intercept).site_spp_phen                                           175.80030  74.9014 305.9640
+snowmelt_rel_scaled:(Intercept).site_spp_phen                                    -1.12508 -10.1602   7.2627
+phase_temp_unmodified_rel_scaled:(Intercept).site_spp_phen                       -9.11223 -22.4989   2.3297
+spring_extent_rel_scaled:(Intercept).site_spp_phen                               -2.87659 -10.7829   4.1116
+year_rel_scaled:(Intercept).site_spp_phen                                         6.77103  -1.7341  16.6785
+(Intercept):snowmelt_rel_scaled.site_spp_phen                                    -1.12508 -10.1602   7.2627
+snowmelt_rel_scaled:snowmelt_rel_scaled.site_spp_phen                             1.82639   0.7534   3.2133
+phase_temp_unmodified_rel_scaled:snowmelt_rel_scaled.site_spp_phen               -0.02613  -1.1130   1.0899
+spring_extent_rel_scaled:snowmelt_rel_scaled.site_spp_phen                       -0.01317  -0.7191   0.7205
+year_rel_scaled:snowmelt_rel_scaled.site_spp_phen                                 0.05018  -0.7964   0.8934
+(Intercept):phase_temp_unmodified_rel_scaled.site_spp_phen                       -9.11223 -22.4989   2.3297
+snowmelt_rel_scaled:phase_temp_unmodified_rel_scaled.site_spp_phen               -0.02613  -1.1130   1.0899
+phase_temp_unmodified_rel_scaled:phase_temp_unmodified_rel_scaled.site_spp_phen   2.64767   1.0469   4.6892
+spring_extent_rel_scaled:phase_temp_unmodified_rel_scaled.site_spp_phen           0.18760  -0.8789   1.3416
+year_rel_scaled:phase_temp_unmodified_rel_scaled.site_spp_phen                   -1.41540  -2.8611  -0.2874
+(Intercept):spring_extent_rel_scaled.site_spp_phen                               -2.87659 -10.7829   4.1116
+snowmelt_rel_scaled:spring_extent_rel_scaled.site_spp_phen                       -0.01317  -0.7191   0.7205
+phase_temp_unmodified_rel_scaled:spring_extent_rel_scaled.site_spp_phen           0.18760  -0.8789   1.3416
+spring_extent_rel_scaled:spring_extent_rel_scaled.site_spp_phen                   1.03275   0.1919   2.1459
+year_rel_scaled:spring_extent_rel_scaled.site_spp_phen                            0.03442  -0.6913   0.7840
+(Intercept):year_rel_scaled.site_spp_phen                                         6.77103  -1.7341  16.6785
+snowmelt_rel_scaled:year_rel_scaled.site_spp_phen                                 0.05018  -0.7964   0.8934
+phase_temp_unmodified_rel_scaled:year_rel_scaled.site_spp_phen                   -1.41540  -2.8611  -0.2874
+spring_extent_rel_scaled:year_rel_scaled.site_spp_phen                            0.03442  -0.6913   0.7840
+year_rel_scaled:year_rel_scaled.site_spp_phen                                     1.37067   0.3530   2.7447
+                                                                                eff.samp
+(Intercept):(Intercept).site_spp_phen                                               3497
+snowmelt_rel_scaled:(Intercept).site_spp_phen                                      33214
+phase_temp_unmodified_rel_scaled:(Intercept).site_spp_phen                        106529
+spring_extent_rel_scaled:(Intercept).site_spp_phen                                115667
+year_rel_scaled:(Intercept).site_spp_phen                                          79404
+(Intercept):snowmelt_rel_scaled.site_spp_phen                                      33214
+snowmelt_rel_scaled:snowmelt_rel_scaled.site_spp_phen                              39666
+phase_temp_unmodified_rel_scaled:snowmelt_rel_scaled.site_spp_phen                118351
+spring_extent_rel_scaled:snowmelt_rel_scaled.site_spp_phen                        110415
+year_rel_scaled:snowmelt_rel_scaled.site_spp_phen                                 112255
+(Intercept):phase_temp_unmodified_rel_scaled.site_spp_phen                        106529
+snowmelt_rel_scaled:phase_temp_unmodified_rel_scaled.site_spp_phen                118351
+phase_temp_unmodified_rel_scaled:phase_temp_unmodified_rel_scaled.site_spp_phen    59662
+spring_extent_rel_scaled:phase_temp_unmodified_rel_scaled.site_spp_phen           105070
+year_rel_scaled:phase_temp_unmodified_rel_scaled.site_spp_phen                     74436
+(Intercept):spring_extent_rel_scaled.site_spp_phen                                115667
+snowmelt_rel_scaled:spring_extent_rel_scaled.site_spp_phen                        110415
+phase_temp_unmodified_rel_scaled:spring_extent_rel_scaled.site_spp_phen           105070
+spring_extent_rel_scaled:spring_extent_rel_scaled.site_spp_phen                    55166
+year_rel_scaled:spring_extent_rel_scaled.site_spp_phen                            108019
+(Intercept):year_rel_scaled.site_spp_phen                                          79404
+snowmelt_rel_scaled:year_rel_scaled.site_spp_phen                                 112255
+phase_temp_unmodified_rel_scaled:year_rel_scaled.site_spp_phen                     74436
+spring_extent_rel_scaled:year_rel_scaled.site_spp_phen                            108019
+year_rel_scaled:year_rel_scaled.site_spp_phen                                      56920
+
+               ~site_name
+
+          post.mean  l-95% CI u-95% CI eff.samp
+site_name       140 2.806e-11    530.6     1937
+
+               ~plot_id
+
+        post.mean l-95% CI u-95% CI eff.samp
+plot_id     21.69    17.07    26.55    72651
+
+               ~year_fac
+
+         post.mean  l-95% CI u-95% CI eff.samp
+year_fac     2.003 2.486e-11    6.312     4856
+
+               ~site_name:year_fac
+
+                   post.mean l-95% CI u-95% CI eff.samp
+site_name:year_fac     9.359     5.21    13.98    12953
+
+ R-structure:  ~units
+
+      post.mean l-95% CI u-95% CI eff.samp
+units     20.67    19.98    21.39   115565
+
+ Location effects: cbind(prior_visit, doy) ~ snowmelt_rel_scaled + phase_temp_unmodified_rel_scaled + spring_extent_rel_scaled + year_rel_scaled 
+
+                                 post.mean l-95% CI u-95% CI eff.samp  pMCMC    
+(Intercept)                       174.2564 161.7190 186.6009    96493 <8e-06 ***
+snowmelt_rel_scaled                 3.1689   2.5381   3.8214   117566 <8e-06 ***
+phase_temp_unmodified_rel_scaled   -2.0715  -2.8383  -1.3123   118374 <8e-06 ***
+spring_extent_rel_scaled           -0.2107  -1.2312   0.7838    98497  0.677    
+year_rel_scaled                    -0.1990  -1.3664   0.9111    92062  0.728    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1

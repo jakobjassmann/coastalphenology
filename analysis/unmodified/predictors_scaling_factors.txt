@@ -1,0 +1,8 @@
+predictor,scale
+phase_temp_rel,0.9782211
+phase_temp_unmodified_rel,0.9225426
+spring_temp_rel,0.7840634
+snowmelt_rel,7.1972644
+onset_ice_melt_rel,26.9099500
+onset_spring_extent_rel,15.5810167
+year_rel,5.9477898
