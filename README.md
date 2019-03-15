@@ -1,29 +1,40 @@
 # Local snowmelt and temperature – but not regional sea-ice – explain variation in spring phenology in coastal Arctic tundra. 
 
-This repository contains the following:
+## Content
+This repository contains the code and data necessary to replicate data analysis, figures, and tables in:
 
-# Data cleaning & assembly scripts for processing the raw data 
+Assmann, Jakob J., Isla H. Myers-Smith, Albert B. Phillimore, Anne D. Bjorkman, Richard E. Ennos, Janet S. Prevéy, Greg H.R. Henry, Niels M. Schmidt and Robert D. Hollister. **In press**. Local snowmelt and temperature – but not regional sea-ice – explain variation in spring phenology in coastal Arctic tundra. *Global Change Biology*.
 
-- Phenology and environmnetal data cleaning and preparation on a per site basis:
+## Contact
+Jakob J Assmann 
+jakobjassmann [at] gmail . com
+jakobjassmann.wordpress.com
+# Data preparation
+
+All data for the phenological observations and environmental predictors is already publicly available. The only exception is the Zackenberg plot-level phenology observations, which we have included with the data preparation scripts in this repostiorty. 
+
+The data preparation, cleaning and assembly scripts can be found in the following locations:
 ```
-/data/phenology_data *
-/data/temperature_data * 
-/data/sea_ice_data *
-
-* Links to the raw data are provided in the readme files in these folders.
+/data/phenology_data
+/data/temperature_data
+/data/sea_ice_data
 ```
-- Data assembly:
+Links to the raw data sets are provided in the readme files within each of the folder. Please follow these links for the respective data sharing and usage agreements of the respective datasets. 
+
+The fowllowing script compiles the data prepared with the scripts above into a single dataset for later use in the analysis
 ```
 /data/dataset_prep.R
 ```
 
-# Data (cleaned and ready for analysis)
+# Data 
+Interval censored phenology observation per site and plot with associated environmental predictore variables, fully cleaned and ready for analysis can be found in the following location:
 ```
 /data/coastal_phen.Rda
 /data/coastal_phen.csv
 ```
+These content of the Rdata and CSV files is identical.
 
 # Analysis scripts
----
 
----
+```
+```
