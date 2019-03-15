@@ -6,7 +6,10 @@ This repository contains the code and data necessary to replicate data analysis,
 Assmann, Jakob J., Isla H. Myers-Smith, Albert B. Phillimore, Anne D. Bjorkman, Richard E. Ennos, Janet S. Prevéy, Greg H.R. Henry, Niels M. Schmidt and Robert D. Hollister. **In press**. Local snowmelt and temperature – but not regional sea-ice – explain variation in spring phenology in coastal Arctic tundra. *Global Change Biology*.
 
 ## Contact
-Jakob J Assmann `jakobjassmann [at] gmail . com`
+Jakob J Assmann 
+
+`jakobjassmann [at] gmail . com`
+
 [jakobjassmann.wordpress.com](jakobjassmann.wordpress.com)
 # Data preparation
 
@@ -26,12 +29,12 @@ The fowllowing script compiles the data prepared with the scripts above into a s
 ```
 
 # Data 
-Interval censored phenology observation per site and plot with associated environmental predictore variables, fully cleaned and ready for analysis can be found in the following location:
+Interval censored phenology observation per site and plot with associated environmental predictor variables, fully cleaned and ready for analysis, can be found in the following location:
 ```
 /data/coastal_phen.Rda
 /data/coastal_phen.csv
 ```
-These content of the Rdata and CSV files is identical.
+The content of the Rda and CSV files is identical.
 
 # Analysis scripts
 
