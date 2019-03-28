@@ -11,3 +11,5 @@ These scripts prepare NOAA/NSIDC Passive Microwave Sea Ice Concentration Data av
 '''
 
 The NetCDF files for the time-period covered by the phenology datasets (1990-2016) will have to be downloaded locally, and the references to the NetCDF file locations need to be adjusted accordingly within each script. 
+
+In additon the 'gsfc_25n.msk' and 'ps25area_v3.dat' polar stereographic grid files are required to run these scripts. The files can be found via the above link and documentation.
