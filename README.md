@@ -23,7 +23,7 @@ Phenological observations:
 
 Environmental predictors:
 - Snowmelt observations are available in the phenology  datasets.
-- Temperature observations for Alexandra Fiord are included in this repository. These data were provided by Anne Bjorkman and Greg Henry (Bjorkman et al., 2015). Please contact the authors for guidance on data usage.
+- Temperature observations for Alexandra Fiord are included in this repository (TBC!). These data were provided by Anne Bjorkman and Greg Henry (Bjorkman et al., 2015). Please contact the authors for guidance on data usage.
 - Temperature observations for Utqiaġvik - Barrow from the NOAA Earth System Research Laboratory Utqiaġvik Global Monitoring Division. Data available at: https://www.esrl.noaa.gov/gmd/obop/brw/ (NOAA ESRL Global Monitoring Division, 2018)
 - Temperature observations for Qiqikqtaruk from Environment Canada Qikiqtaruk - Herschel Island weather station (ID 1560) gap-filled with Environment Canada Komakuk (ID 10822). Data available at:
 http://climate.weather.gc.ca/historical_data/search_historic_data_e.html
