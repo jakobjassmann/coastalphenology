@@ -1,7 +1,7 @@
 # Coastal Phenology Data and Code Repository
 
 ## Content
-This repository contains the code and data necessary to replicate data analysis, figures, and tables in:
+This repository contains the code and data necessary to replicate data analysis, figures and tables in:
 
 Assmann, Jakob J., Isla H. Myers-Smith, Albert B. Phillimore, Anne D. Bjorkman, Richard E. Ennos, Janet S. Prevéy, Greg H.R. Henry, Niels M. Schmidt and Robert D. Hollister. In press. ***Local snowmelt and temperature – but not regional sea-ice – explain variation in spring phenology in coastal Arctic tundra***. Global Change Biology.
 
