@@ -77,8 +77,8 @@ And the above but using site-level snowmelt instead of plot-level snomwlet:
 /analysis/coastal_phen_output_visual_snowmelt_avg.r	
 ```
 *Please note:* Due to a developmental legacy the data set and analysis contain two versions of the temperature variable:
-- 'temperature_unmodified' Mean of the daily spring temperature in the period from first snowmelt on record to 75% of the phenology events occuring for a given site-species-phenological event combination. **This is the temperature variable used in the analysis presented in the paper.**
-- 'temperature' Mean of the daily spring temperature in the period from two weeks prior first snowmelt on record to 75% of the phenology events occuring for a given site-species-phenological event combination. This temperature variable was not used in the analysis presented in the paper.
+- 'temperature_unmodified' Mean of the daily spring temperature in the period from first snowmelt on record to 75% of the phenology events occuring for a given site-species-phenological event combination. **This is the temperature variable used in the analysis presented in the publication.**
+- 'temperature' Mean of the daily spring temperature in the period from two weeks prior first snowmelt on record to 75% of the phenology events occuring for a given site-species-phenological event combination. This temperature variable was not used in the analysis presented in the publication.
 
 # References
 Bjorkman, A. D., Elmendorf, S. C., Beamish, A. L., Vellend, M., & Henry, G. H. R. (2015). Contrasting effects of warming and increased snowfall on Arctic tundra plant phenology over the past two decades. Global Change Biology, 21, 4651–4661. https://doi.org/10.1111/gcb.13051
