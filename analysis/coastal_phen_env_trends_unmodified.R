@@ -362,7 +362,7 @@ plot_sea_ice <- function(site_to_plot){
                        breaks = seq(1990, 2016, 5)) +
     scale_y_continuous(limits = c(90, 250), breaks = seq(100,240,20)) +
     xlab(label = "") +
-    ylab(label = ylab_filter("Onset Sea-Ice Melt (DoY)", site_to_plot)) +
+    ylab(label = ylab_filter("Spring Drop Sea-Ice (DoY)", site_to_plot)) +
     annotate("text", x = (colour_theme_sites[colour_theme_sites$site_name == site_to_plot,]$end_year + 
                             colour_theme_sites[colour_theme_sites$site_name == site_to_plot,]$start_year) / 2,
              y = 245, label = name_pretty,
