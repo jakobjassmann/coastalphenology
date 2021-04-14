@@ -4,9 +4,10 @@ Jakob J. Assmann j.assmann@bio.au.dk - 14 April 2021
 
 ### Summary
 
-- We ruesed the sea-ice data extraction code developed for Assmann et al. 2019. Global Change Biology for a recent project. 
-- During the transfer of the code to different sites we spotted a small indexing error in the extractions scripts for the published manuscript. 
-- We re-extracted the data for Assmann et al. 2019 with the error resolved, reran the analysis and found no noticeable impact on the findings presented and conclusions drawn in the original manuscript. 
+- We recently used the sea-ice data extraction code developed for Assmann et al. 2019. Global Change Biology for another project. 
+- During the transfer of the code to the new project we spotted a small indexing error in the extractions scripts used in the published manuscript. 
+- We resolved the error, re-extracted the data and re-ran the analysis for Assmann et al. 2019. 
+- We no noticeable impact on the findings and conclusions presented in the original manuscript. 
 
 ---
 
@@ -40,11 +41,11 @@ for (i in 1:448){
 
 The cell sizes were affected as follows:
 
-<img src="/Users/au634851/Repositories/coastalphenology/data/2020_02_01_quality_control/qc_2021/polar_grid_cell_area_wrong.png" style="zoom:75%;" />
+<img src="data/2020_02_01_quality_control/qc_2021/polar_grid_cell_area_wrong.png" style="zoom:75%;" />
 
 **Fig 1: ** Wrongly loaded cell sizes of the NSIDC polar stereographic grid (North Pole) in square kilometres.
 
-<img src="/Users/au634851/Repositories/coastalphenology/data/2020_02_01_quality_control/qc_2021/polar_grid_cell_area_correct.png" style="zoom:75%;" />
+<img src="data/2020_02_01_quality_control/qc_2021/polar_grid_cell_area_correct.png" style="zoom:75%;" />
 
 **Fig 2: ** Correctly loaded cell sizes of the NSIDC polar stereographic grid  (North Pole) in square kilometres.
 
@@ -74,7 +75,7 @@ For our anlaysis in Assmann et al. 2019, we used the daily regional sea-ice exte
 
 
 
-![](/Users/au634851/Repositories/coastalphenology/data/2020_02_01_quality_control/qc_2021/diff_sea_ice_drop.png)
+![](data/2020_02_01_quality_control/qc_2021/diff_sea_ice_drop.png)
 
 **Fig 3: ** The coding error had a very small effect on the estimated annual spring drop in sea-ice (Day of Year) for each region. Blue lines and points show the original estimates derieved with the error and red lines and points show the new estimates with the error corrected. 
 
@@ -99,7 +100,7 @@ The main objective for our study was assess wich of the three predictors (spring
 
 
 
-![](analysis/unmodified/coastal_spp_effect_size_plot_centre legend.png)
+![](analysis/unmodified/coastal_spp_effect_size_plot_centre_legend.png)
 
 **Fig 4: ** **Original figure** showing the estimated effect sizes for the three environmental predictors (snowmelt, temperature and spring drop in sea ice) on the phenology events in Assmann et al. 2019. These results contained the spring drop in sea ice estimates produced with the coding error. 
 
