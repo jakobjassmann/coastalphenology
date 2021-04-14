@@ -43,7 +43,7 @@ The cell sizes were affected as follows:
 
 <img src="data/2020_02_01_quality_control/qc_2021/polar_grid_cell_area_wrong.png" style="zoom:75%;" />
 
-__Figure 1: __ Wrongly loaded cell sizes of the NSIDC polar stereographic grid (North Pole) in square kilometres.
+__Figure 1:__ Wrongly loaded cell sizes of the NSIDC polar stereographic grid (North Pole) in square kilometres.
 
 
 
