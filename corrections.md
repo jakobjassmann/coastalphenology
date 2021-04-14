@@ -83,13 +83,13 @@ For our anlaysis in Assmann et al. 2019, we used the daily regional sea-ice exte
 
 __Figure 3__: The coding error had a very small effect on the estimated annual spring drop in sea-ice (Day of Year) for each region. Blue lines and points show the original estimates derieved with the error and red lines and points show the new estimates with the error corrected. 
 
-The new spring drop in sea-ice extent can be calculated using:
+The spring drop in sea-ice extent can be re-calculated from the corrected data using this script:
 
 ``` R
 data/dataset_prep_new.R
 ```
 
-The updated datasets can be found in:
+The resulting updated datasets can be found in:
 
 ``` R
 data/coastal_phen_new.Rda
@@ -100,7 +100,7 @@ data/coastal_phen_new.csv
 
 ### No noticeable impact on the main findings and conclusions
 
-The main objective for our study was assess wich of the three predictors (spring snowmelt, spring temperature and spring drop in sea ice extent) were the most meaningful for predicting tundra phenology at four study sites. We re-ran the Baysen hierachical mixed model analysis and found that the corrected onset of spring drop in sea-ice predictor had no noticeable impact on the findings and conclusions presented in the orginal manuscript.
+The main objective for our study was assess wich of the three predictors (spring snowmelt, spring temperature and spring drop in sea ice extent) were the most meaningful for predicting tundra phenology at four study sites. We re-ran our Baysen hierachical mixed model analysis and found that the corrected onset of spring drop in sea-ice predictor had no noticeable impact on the findings and conclusions presented in the orginal manuscript.
 
 
 
@@ -112,7 +112,7 @@ __Figure 4:__ **Original figure** showing the estimated effect sizes for the thr
 
 ![](analysis/2021_02_01_new_analysis/coastal_spp_effect_size_plot.png)
 
-__Figure 5:__ Results from the re-analysis using the **corrected ** sea ice predictor data show no noticable difference in the estimated effect sizes of the three environmental predictors (snowmelt, temperature and spring drop in sea ice) on the phenology events compared to the orignal figure presented in Assmann et al. 2019 (Fig 4).
+__Figure 5:__ Results from the re-analysis using the **corrected ** sea ice predictor data show no noticable difference in the estimated effect sizes of the three environmental predictors (snowmelt, temperature and spring drop in sea ice) on the phenology events when compared to the orignal figure from Assmann et al. 2019 (Figure 4).
 
 The updated analysis scripts can be found here:
 
