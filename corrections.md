@@ -112,7 +112,7 @@ __Figure 4:__ **Original figure** showing the estimated effect sizes for the thr
 
 ![](analysis/2021_02_01_new_analysis/coastal_spp_effect_size_plot.png)
 
-__Figure 5:__ Results from the re-analysis using the **corrected ** sea ice predictor data show no noticable difference in the estimated effect sizes of the three environmental predictors (snowmelt, temperature and spring drop in sea ice) on the phenology events when compared to the orignal figure from Assmann et al. 2019 (Figure 4).
+__Figure 5:__ Results from the re-analysis using the **corrected** sea ice predictor data show no noticable difference in the estimated effect sizes of the three environmental predictors (snowmelt, temperature and spring drop in sea ice) on the phenology events when compared to the orignal figure from Assmann et al. 2019 (Figure 4).
 
 The updated analysis scripts can be found here:
 
