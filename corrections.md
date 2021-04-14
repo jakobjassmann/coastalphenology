@@ -81,7 +81,7 @@ For our anlaysis in Assmann et al. 2019, we used the daily regional sea-ice exte
 
 ![](data/2020_02_01_quality_control/qc_2021/diff_sea_ice_drop.png)
 
- **Fig 3: ** The coding error had a very small effect on the estimated annual spring drop in sea-ice (Day of Year) for each region. Blue lines and points show the original estimates derieved with the error and red lines and points show the new estimates with the error corrected. 
+__Figure 3__: The coding error had a very small effect on the estimated annual spring drop in sea-ice (Day of Year) for each region. Blue lines and points show the original estimates derieved with the error and red lines and points show the new estimates with the error corrected. 
 
 The new spring drop in sea-ice extent can be calculated using:
 
@@ -112,7 +112,7 @@ __Figure 4__ **Original figure** showing the estimated effect sizes for the thre
 
 ![](analysis/2021_02_01_new_analysis/coastal_spp_effect_size_plot.png)
 
- **Fig 5: ** Results from the re-analysis using the **corrected ** sea ice predictor data show no noticable difference in the estimated effect sizes of the three environmental predictors (snowmelt, temperature and spring drop in sea ice) on the phenology events compared to the orignal figure presented in Assmann et al. 2019 (Fig 4).
+__Fig 5:__ Results from the re-analysis using the **corrected ** sea ice predictor data show no noticable difference in the estimated effect sizes of the three environmental predictors (snowmelt, temperature and spring drop in sea ice) on the phenology events compared to the orignal figure presented in Assmann et al. 2019 (Fig 4).
 
 The updated analysis scripts can be found here:
 
