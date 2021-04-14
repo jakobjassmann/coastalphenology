@@ -12,9 +12,9 @@ Email: j.assmann [at] ed.ac.uk
 
 Website: [jakobjassmann.wordpress.com](https://jakobjassmann.wordpress.com/)
 
-## Corrections (14 April 2021)
+## IMPORTANT - corrections (14 April 2021)
 
-**Update:** We recently discovered a coding error in the scripts estimating the regional spring drop in sea ice extent. We corrected the error and re-run the analysis. No noticeable impact on the findings and conclusions presented in the original manuscript were found. Please read [this document](corrections.md) to find out more about the error and it's impacts. 
+**Update:** We recently discovered a coding error in the scripts estimating the regional spring drop in sea ice extent. We corrected the error and re-ran the analysis. No noticeable impact on the findings and conclusions presented in the original manuscript were found. Please read [this document](corrections.md) to find out more about the coding error and it's impacts. 
 
 ## Data usage guidelines and license 
 ### Data
