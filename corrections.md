@@ -106,7 +106,7 @@ The main objective for our study was assess wich of the three predictors (spring
 
 ![](analysis/unmodified/coastal_spp_effect_size_plot_centre_legend.png)
 
- **Fig 4: ** **Original figure** showing the estimated effect sizes for the three environmental predictors (snowmelt, temperature and spring drop in sea ice) on the phenology events in Assmann et al. 2019. These results contained the spring drop in sea ice estimates produced with the coding error. 
+__Figure 4__ **Original figure** showing the estimated effect sizes for the three environmental predictors (snowmelt, temperature and spring drop in sea ice) on the phenology events in Assmann et al. 2019. These results contained the spring drop in sea ice estimates produced with the coding error. 
 
 
 
