@@ -1,6 +1,6 @@
 ## Code error in sea ice data extraction for *Assmann et al. 2019. Global Change Biology* with no consequences for the findings and conclusions 
 
-Jakob J. Assmann j.assmann@bio.au.dk - 14 April 2021
+Jakob J. Assmann j.assmann@bio.au.dk - 14 April 2021 (updated 4 May 2021)
 
 ### Summary
 
@@ -62,13 +62,13 @@ data/sea_ice_data/qhi/sea_ice_extraction_qhi.R # line 94 onwards
 data/sea_ice_data/zackenberg/sea_ice_extraction_zackenberg.R # line 65 onwards
 ```
 
-These error was corrected in the following new copies of these scripts:
+These error was corrected. Copies of the old original scripts can be found here. :
 
 ``` R
-data/sea_ice_data/alexfiord/sea_ice_extraction_alexfiord_new.R 
-data/sea_ice_data/barrow/sea_ice_extraction_barrow_new.R  
-data/sea_ice_data/qhi/sea_ice_extraction_qhi_new.R 
-data/sea_ice_data/zackenberg/sea_ice_extraction_zackenberg_new.R
+data/sea_ice_data/alexfiord/sea_ice_extraction_alexfiord_old.R 
+data/sea_ice_data/barrow/sea_ice_extraction_barrow_old.R  
+data/sea_ice_data/qhi/sea_ice_extraction_qhi_old.R 
+data/sea_ice_data/zackenberg/sea_ice_extraction_zackenberg_old.R
 ```
 
 ---
@@ -83,15 +83,10 @@ For our anlaysis in Assmann et al. 2019, we used the daily regional sea-ice exte
 
 __Figure 3__: The coding error had a very small effect on the estimated annual spring drop in sea-ice (Day of Year) for each region. Blue lines and points show the original estimates derieved with the error and red lines and points show the new estimates with the error corrected. 
 
-The spring drop in sea-ice extent can be re-calculated from the corrected data using this script:
+We have updated the dataset preparation script and the prepared datasets on the repository. For legacy the original (submitted) script and dataset can be found here:
 
 ``` R
-data/dataset_prep_new.R
-```
-
-The resulting updated datasets can be found in:
-
-``` R
+data/dataset_prep_old.R
 data/coastal_phen_new.Rda
 data/coastal_phen_new.csv
 ```
@@ -114,11 +109,11 @@ __Figure 4:__ **Original figure** showing the estimated effect sizes for the thr
 
 __Figure 5:__ Results from the re-analysis using the **corrected** sea ice predictor data show no noticable difference in the estimated effect sizes of the three environmental predictors (snowmelt, temperature and spring drop in sea ice) on the phenology events when compared to the orignal figure from Assmann et al. 2019 (Figure 4).
 
-The updated analysis scripts can be found here:
+The analysis scripts were updated accordingly. Legacy version of the original (submitted) scripts can be found here:
 
 ``` R
-analysis/coastal_phen_output_visual_unmodified_new.R # Mixed-model analysis 
-analysis/coastal_phen_output_visual_unmodified_new.R # Output visualisation
+analysis/coastal_phen_attribution_old.R # Mixed-model analysis 
+analysis/coastal_phen_output_visual_unmodified_old.R # Output visualisation
 ```
 
  
