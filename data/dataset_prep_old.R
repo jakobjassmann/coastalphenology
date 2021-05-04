@@ -6,7 +6,7 @@ library(dplyr)
 library(ggplot2)
 
 # Housekeeping
-script_path <- "data/"
+script_path <- "data"
 sites <- c("alexfiord", "barrow", "qhi", "zackenberg") # NB lower case for objects
 
 # Import phenology data
@@ -22,10 +22,10 @@ qhi_temp <- read.csv("data/temperature_data/qhi/qhi_daily_temp.csv")
 zackenberg_temp <- read.csv("data/temperature_data/zackenberg/zackenberg_daily_temp.csv")
 
 # Import sea ice data
-alexfiord_sea_ice <- read.csv("data/sea_ice_data/alexfiord/alexfiord_sea_ice_extent_new.csv")
-barrow_sea_ice <- read.csv("data/sea_ice_data/barrow/barrow_sea_ice_extent_new.csv")
-qhi_sea_ice <- read.csv("data/sea_ice_data/qhi/qhi_sea_ice_new.csv")
-zackenberg_sea_ice <- read.csv("data/sea_ice_data/zackenberg/zackenberg_sea_ice_extent_new.csv")
+alexfiord_sea_ice <- read.csv("data/sea_ice_data/alexfiord/alexfiord_sea_ice_extent.csv")
+barrow_sea_ice <- read.csv("data/sea_ice_data/barrow/barrow_sea_ice_extent.csv")
+qhi_sea_ice <- read.csv("data/sea_ice_data/qhi/qhi_sea_ice.csv")
+zackenberg_sea_ice <- read.csv("data/sea_ice_data/zackenberg/zackenberg_sea_ice_extent.csv")
 
 ### Prepare temperature data
 extract_temperature <- function(site_name) {
@@ -95,7 +95,7 @@ extract_temperature <- function(site_name) {
  
   # Save time periods data frame for QC purposes.
   write.csv(cbind(time_periods_df, start_period_site, start_period_site_unmodified, end_period_site), file= paste0(script_path, "quality_control/time_periods_temperature_", site_name, ".csv"))
-
+  
   ## Calculate yearly averages for each time period and export to phenology dataframe
   sapply(time_periods_df$spp_phen, function(spp_phen_comb){
     # grab years on record and start / end dates
@@ -177,7 +177,7 @@ extract_sea_ice <- function(site_name){
   onset_sea_ice_melt$ice_extent <- sea_ice_data[sea_ice_data$date %in% onset_sea_ice_melt$date,]$sea_ice_extent
   # avoid NAs by setting missing to extent_85
   if(sum(is.na(onset_sea_ice_melt$ice_extent)) != 0){ 
-    onset_sea_ice_melt[is.na(onset_sea_ice_melt$ice_extent),]$ice_extent <- round(extent_85)
+    onset_sea_ice_melt[is.na(onset_sea_ice_melt$ice_extent),]$ice_extent <- extent_85
   }
   
   if(site_name == "alexfiord"){
@@ -197,7 +197,7 @@ extract_sea_ice <- function(site_name){
     ggtitle(label = paste0(site_name_pretty)) +
     scale_x_date(date_breaks = "1 years", date_labels = "%Y") +
     geom_point(data = onset_sea_ice_melt, aes(x = date, y = ice_extent), colour = "firebrick", size = 3) +
-    scale_y_continuous(limits = c(0, 150000), breaks = seq(0, 150000, 25000)) +
+    scale_y_continuous(limits = c(0, 125000), breaks = seq(0, 125000, 25000)) +
     ylab(expression(paste("Regional Sea Ice Extent (", km^2, ")"))) +
     xlab("") +
     theme_bw() + theme(legend.position = "none", 
@@ -208,7 +208,7 @@ extract_sea_ice <- function(site_name){
                        panel.border = element_rect(colour = "black"),
                        axis.title = element_text(size = 30),
                        plot.title = element_text(size = 30)) 
-  ggsave(paste0(script_path, "sea_ice_data/", site_name, "/", site_name, "_sea_ice_new.png"), width = 16, height = 8)
+  ggsave(paste0(script_path, "sea_ice_data/", site_name, "/", site_name, "_sea_ice.png"), width = 16, height = 8)
  
   # spring (may june july) average
   onset_sea_ice_melt$spring_extent <- sea_ice_data %>%
@@ -247,7 +247,6 @@ extract_sea_ice <- function(site_name){
   years_on_record <- unique(phen_data$year)
   sapply(years_on_record, function(year_to_set){
     phen_data[phen_data$year == year_to_set,]$onset_ice_melt <<- onset_sea_ice_melt[onset_sea_ice_melt$year == year_to_set,]$onset_melt
-   
     phen_data[phen_data$year == year_to_set,]$spring_extent <<- onset_sea_ice_melt[onset_sea_ice_melt$year == year_to_set,]$spring_extent
     phen_data[phen_data$year == year_to_set,]$phase_extent <<- onset_sea_ice_melt[onset_sea_ice_melt$year == year_to_set,]$phase_extent
     phen_data[phen_data$year == year_to_set,]$phase_extent_unmodified <<- onset_sea_ice_melt[onset_sea_ice_melt$year == year_to_set,]$phase_extent_unmodified
@@ -260,11 +259,10 @@ extract_sea_ice <- function(site_name){
 
 
 # no sea_ice data avialable for 2017 throw out 2017 data from sea_ice dataset
-# that is not needed
-alexfiord_sea_ice <- alexfiord_sea_ice[alexfiord_sea_ice$year >= 1992 & alexfiord_sea_ice$year <= 2013,]
-barrow_sea_ice <- barrow_sea_ice[barrow_sea_ice$year >= 1994 & barrow_sea_ice$year <= 2014,]
-qhi_sea_ice <- qhi_sea_ice[qhi_sea_ice$year >= 2001 & qhi_sea_ice$year <= 2016,]
-zackenberg_sea_ice <- zackenberg_sea_ice[zackenberg_sea_ice$year >= 1996 & zackenberg_sea_ice$year <= 2011,]
+alexfiord_sea_ice <- alexfiord_sea_ice[alexfiord_sea_ice$year != 2017,]
+barrow_sea_ice <- barrow_sea_ice[barrow_sea_ice$year != 2017,]
+qhi_sea_ice <- qhi_sea_ice[qhi_sea_ice$year != 2017,]
+zackenberg_sea_ice <- zackenberg_sea_ice[zackenberg_sea_ice$year != 2017,]
 
 # no sea_ice data available for 2017 throw out QHI data
 qhi_phen <- qhi_phen[qhi_phen$year != 2017,]
@@ -287,92 +285,92 @@ coastal_phen$year_fac <- factor(coastal_phen$year)
 coastal_phen <- coastal_phen[c(1,2,3,4,5,6,7,23,seq(8,22))]
 
 # export data
-save(coastal_phen, file = paste0(script_path, "coastal_phen_new.Rda"))
-write.csv(coastal_phen, file = paste0(script_path, "coastal_phen_new.csv"), row.names = F)
+save(coastal_phen, file = paste0(script_path, "coastal_phen.Rda"))
+write.csv(coastal_phen, file = paste0(script_path, "coastal_phen.csv"), row.names = F)
 
 # Plot mean of all variables for each phenostage for QC
 mean_phenology <- coastal_phen %>% group_by(site_spp_phen) %>% summarise(mean_phenology = mean(doy, na.rm = T))
 ggplot(data = mean_phenology, aes(x = site_spp_phen, y = mean_phenology)) + geom_point() + theme(axis.text.x = element_text(angle = 90))
-ggsave(paste0(script_path, "quality_control/mean_phenology_new.png"), width = 16, height = 8)
+ggsave(paste0(script_path, "quality_control/mean_phenology.png"), width = 16, height = 8)
 
 mean_snowmelt <- coastal_phen %>% group_by(site_spp_phen) %>% summarise(mean_snowmelt = mean(snowmelt, na.rm = T))
 ggplot(data = mean_snowmelt, aes(x = site_spp_phen, y = mean_snowmelt)) + geom_point() + theme(axis.text.x = element_text(angle = 90))
-ggsave(paste0(script_path, "quality_control/mean_snowmelt_new.png"), width = 16, height = 8)
+ggsave(paste0(script_path, "quality_control/mean_snowmelt.png"), width = 16, height = 8)
 
 mean_phase_temp <- coastal_phen %>% group_by(site_spp_phen) %>% summarise(mean_phase_temp = mean(phase_temp, na.rm = T))
 ggplot(data = mean_phase_temp, aes(x = site_spp_phen, y = mean_phase_temp)) + geom_point() + theme(axis.text.x = element_text(angle = 90))
-ggsave(paste0(script_path, "quality_control/mean_phase_temp_new.png"), width = 16, height = 8)
+ggsave(paste0(script_path, "quality_control/mean_phase_temp.png"), width = 16, height = 8)
 
 mean_phase_temp_unmodified <- coastal_phen %>% group_by(site_spp_phen) %>% summarise(mean_phase_temp_unmodified = mean(phase_temp_unmodified, na.rm = T))
 ggplot(data = mean_phase_temp_unmodified, aes(x = site_spp_phen, y = mean_phase_temp_unmodified)) + geom_point() + theme(axis.text.x = element_text(angle = 90))
-ggsave(paste0(script_path, "quality_control/mean_phase_temp_unmodified_new.png"), width = 16, height = 8)
+ggsave(paste0(script_path, "quality_control/mean_phase_temp_unmodified.png"), width = 16, height = 8)
 
 mean_site_phase_temp <- coastal_phen %>% group_by(site_spp_phen) %>% summarise(mean_site_phase_temp = mean(phase_temp, na.rm = T))
 ggplot(data = mean_site_phase_temp, aes(x = site_spp_phen, y = mean_site_phase_temp)) + geom_point() + theme(axis.text.x = element_text(angle = 90))
-ggsave(paste0(script_path, "quality_control/mean_site_phase_temp_new.png"), width = 16, height = 8)
+ggsave(paste0(script_path, "quality_control/mean_site_phase_temp.png"), width = 16, height = 8)
 
 mean_site_phase_temp_unmodified <- coastal_phen %>% group_by(site_spp_phen) %>% summarise(mean_site_phase_temp_unmodified = mean(phase_temp_unmodified, na.rm = T))
 ggplot(data = mean_site_phase_temp_unmodified, aes(x = site_spp_phen, y = mean_site_phase_temp_unmodified)) + geom_point() + theme(axis.text.x = element_text(angle = 90))
-ggsave(paste0(script_path, "quality_control/mean_site_phase_temp_unmodified_new.png"), width = 16, height = 8)
+ggsave(paste0(script_path, "quality_control/mean_site_phase_temp_unmodified.png"), width = 16, height = 8)
 
 mean_onset_ice_melt <- coastal_phen %>% group_by(site_spp_phen) %>% summarise(mean_onset_ice_melt = mean(onset_ice_melt, na.rm = T))
 ggplot(data = mean_onset_ice_melt, aes(x = site_spp_phen, y = mean_onset_ice_melt)) + geom_point() + theme(axis.text.x = element_text(angle = 90))
-ggsave(paste0(script_path, "quality_control/mean_onset_ice_melt_new.png"), width = 16, height = 8)
+ggsave(paste0(script_path, "quality_control/mean_onset_ice_melt.png"), width = 16, height = 8)
 
 mean_spring_extent <- coastal_phen %>% group_by(site_spp_phen) %>% summarise(mean_spring_extent = mean(spring_extent, na.rm = T))
 ggplot(data = mean_spring_extent, aes(x = site_spp_phen, y = mean_spring_extent)) + geom_point() + theme(axis.text.x = element_text(angle = 90))
-ggsave(paste0(script_path, "quality_control/mean_spring_extent_new.png"), width = 16, height = 8)
+ggsave(paste0(script_path, "quality_control/mean_spring_extent.png"), width = 16, height = 8)
 
 mean_phase_extent <- coastal_phen %>% group_by(site_spp_phen) %>% summarise(mean_phase_extent = mean(phase_extent, na.rm = T))
 ggplot(data = mean_phase_extent, aes(x = site_spp_phen, y = mean_phase_extent)) + geom_point() + theme(axis.text.x = element_text(angle = 90))
-ggsave(paste0(script_path, "quality_control/mean_phase_extent_new.png"), width = 16, height = 8)
+ggsave(paste0(script_path, "quality_control/mean_phase_extent.png"), width = 16, height = 8)
 
 mean_phase_extent_unmodified <- coastal_phen %>% group_by(site_spp_phen) %>% summarise(mean_phase_extent_unmodified = mean(phase_extent_unmodified, na.rm = T))
 ggplot(data = mean_phase_extent_unmodified, aes(x = site_spp_phen, y = mean_phase_extent_unmodified)) + geom_point() + theme(axis.text.x = element_text(angle = 90))
-ggsave(paste0(script_path, "quality_control/mean_phase_extent_unmodified_new.png"), width = 16, height = 8)
+ggsave(paste0(script_path, "quality_control/mean_phase_extent_unmodified.png"), width = 16, height = 8)
 
 phenology <- coastal_phen %>% group_by(site_spp_phen) 
 ggplot(data = phenology, aes(x = site_spp_phen, y = doy)) + geom_point() + theme(axis.text.x = element_text(angle = 90))
-ggsave(paste0(script_path, "quality_control/phenology_new.png"), width = 16, height = 8)
+ggsave(paste0(script_path, "quality_control/phenology.png"), width = 16, height = 8)
 
 snowmelt <- coastal_phen %>% group_by(site_spp_phen)
 ggplot(data = snowmelt, aes(x = site_spp_phen, y = snowmelt)) + geom_point() + theme(axis.text.x = element_text(angle = 90))
-ggsave(paste0(script_path, "quality_control/snowmelt_new.png"), width = 16, height = 8)
+ggsave(paste0(script_path, "quality_control/snowmelt.png"), width = 16, height = 8)
 
 phase_temp <- coastal_phen %>% group_by(site_spp_phen) 
 ggplot(data = phase_temp, aes(x = site_spp_phen, y = phase_temp)) + geom_point() + theme(axis.text.x = element_text(angle = 90))
-ggsave(paste0(script_path, "quality_control/phase_temp_new.png"), width = 16, height = 8)
+ggsave(paste0(script_path, "quality_control/phase_temp.png"), width = 16, height = 8)
 
 phase_temp <- coastal_phen %>% group_by(site_spp_phen) 
 ggplot(data = phase_temp, aes(x = site_spp_phen, y = spring_temp)) + geom_point() + theme(axis.text.x = element_text(angle = 90))
-ggsave(paste0(script_path, "quality_control/spring_temp_new.png"), width = 16, height = 8)
+ggsave(paste0(script_path, "quality_control/spring_temp.png"), width = 16, height = 8)
 
 phase_temp_unmodified <- coastal_phen %>% group_by(site_spp_phen)
 ggplot(data = phase_temp_unmodified, aes(x = site_spp_phen, y = phase_temp_unmodified)) + geom_point() + theme(axis.text.x = element_text(angle = 90))
-ggsave(paste0(script_path, "quality_control/phase_temp_unmodified_new.png"), width = 16, height = 8)
+ggsave(paste0(script_path, "quality_control/phase_temp_unmodified.png"), width = 16, height = 8)
 
 site_phase_temp <- coastal_phen %>% group_by(site_spp_phen) 
 ggplot(data = site_phase_temp, aes(x = site_spp_phen, y = site_phase_temp)) + geom_point() + theme(axis.text.x = element_text(angle = 90))
-ggsave(paste0(script_path, "quality_control/site_phase_temp_new.png"), width = 16, height = 8)
+ggsave(paste0(script_path, "quality_control/site_phase_temp.png"), width = 16, height = 8)
 
 site_phase_temp_unmodified <- coastal_phen %>% group_by(site_spp_phen) 
 ggplot(data = site_phase_temp_unmodified, aes(x = site_spp_phen, y = site_phase_temp_unmodified)) + geom_point() + theme(axis.text.x = element_text(angle = 90))
-ggsave(paste0(script_path, "quality_control/site_phase_temp_unmodified_new.png"), width = 16, height = 8)
+ggsave(paste0(script_path, "quality_control/site_phase_temp_unmodified.png"), width = 16, height = 8)
 
 onset_ice_melt <- coastal_phen %>% group_by(site_spp_phen) 
 ggplot(data = onset_ice_melt, aes(x = site_spp_phen, y = onset_ice_melt)) + geom_point() + theme(axis.text.x = element_text(angle = 90))
-ggsave(paste0(script_path, "quality_control/onset_ice_melt_new.png"), width = 16, height = 8)
+ggsave(paste0(script_path, "quality_control/onset_ice_melt.png"), width = 16, height = 8)
 
 spring_extent <- coastal_phen %>% group_by(site_spp_phen)
 ggplot(data = spring_extent, aes(x = site_spp_phen, y = spring_extent)) + geom_point() + theme(axis.text.x = element_text(angle = 90))
-ggsave(paste0(script_path, "quality_control/spring_extent_new.png"), width = 16, height = 8)
+ggsave(paste0(script_path, "quality_control/spring_extent.png"), width = 16, height = 8)
 
 phase_extent <- coastal_phen %>% group_by(site_spp_phen) 
 ggplot(data = phase_extent, aes(x = site_spp_phen, y = phase_extent)) + geom_point() + theme(axis.text.x = element_text(angle = 90))
-ggsave(paste0(script_path, "quality_control/phase_extent_new.png"), width = 16, height = 8)
+ggsave(paste0(script_path, "quality_control/phase_extent.png"), width = 16, height = 8)
 
 phase_extent_unmodified <- coastal_phen %>% group_by(site_spp_phen) 
 ggplot(data = phase_extent_unmodified, aes(x = site_spp_phen, y = phase_extent_unmodified)) + geom_point() + theme(axis.text.x = element_text(angle = 90))
-ggsave(paste0(script_path, "quality_control/phase_extent_unmodified_new.png"), width = 16, height = 8)
+ggsave(paste0(script_path, "quality_control/phase_extent_unmodified.png"), width = 16, height = 8)
 
 

@@ -6,9 +6,9 @@ library(tidyverse)
 library(cowplot)
 
 # Load data
-load("data/coastal_phen_new.Rda")
-coastal_phen_new <- coastal_phen
 load("data/coastal_phen.Rda")
+coastal_phen_new <- coastal_phen
+load("data/coastal_phen_old.Rda")
 
 # Check structure of the data frames is the same
 ncol(coastal_phen) == ncol(coastal_phen_new)
