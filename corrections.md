@@ -62,7 +62,7 @@ data/sea_ice_data/qhi/sea_ice_extraction_qhi.R # line 94 onwards
 data/sea_ice_data/zackenberg/sea_ice_extraction_zackenberg.R # line 65 onwards
 ```
 
-We corrected the errors and kept copies of the original (submitted) scripts. These can now be found here:
+We corrected the errors and kept copies of the original (submitted) scripts. These can be found here:
 
 ``` R
 data/sea_ice_data/alexfiord/sea_ice_extraction_alexfiord_old.R 
@@ -83,7 +83,7 @@ For our anlaysis in Assmann et al. 2019, we used the daily regional sea-ice exte
 
 __Figure 3__: The coding error had a very small effect on the estimated annual spring drop in sea-ice (Day of Year) for each region. Blue lines and points show the original estimates derieved with the error and red lines and points show the new estimates with the error corrected. 
 
-We have updated the dataset preparation script and the prepared datasets on the repository. For legacy the original (submitted) script and dataset can be found here:
+We have updated the dataset preparation script and the prepared datasets on the repository. The original (submitted) script and dataset can be found here:
 
 ``` R
 data/dataset_prep_old.R
@@ -109,7 +109,7 @@ __Figure 4:__ **Original figure** showing the estimated effect sizes for the thr
 
 __Figure 5:__ Results from the re-analysis using the **corrected** sea ice predictor data show no noticable difference in the estimated effect sizes of the three environmental predictors (snowmelt, temperature and spring drop in sea ice) on the phenology events when compared to the orignal figure from Assmann et al. 2019 (Figure 4).
 
-The analysis scripts were updated accordingly. Legacy version of the original (submitted) scripts can be found here:
+We updated the attribution analysis scripts accordingly. The original (submitted) scripts can be found here:
 
 ``` R
 analysis/coastal_phen_attribution_old.R # Mixed-model analysis 
