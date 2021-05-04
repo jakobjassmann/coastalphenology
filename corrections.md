@@ -62,7 +62,7 @@ data/sea_ice_data/qhi/sea_ice_extraction_qhi.R # line 94 onwards
 data/sea_ice_data/zackenberg/sea_ice_extraction_zackenberg.R # line 65 onwards
 ```
 
-These error was corrected. Copies of the old original scripts can be found here. :
+We corrected the errors in all scripts and kept copies of the original (submitted) scripts. The original scripts  can be found here:
 
 ``` R
 data/sea_ice_data/alexfiord/sea_ice_extraction_alexfiord_old.R 
