@@ -10,13 +10,10 @@ require(snow)
 require(doSNOW)
 
 # Housekeeping
-# script_path <- "scripts/users/jassmann/phenology/coastal_phenology/"
+script_path <- "scripts/users/jassmann/phenology/coastal_phenology/"
 
 # Load data
-load("data/coastal_phen_new.Rda")
-
-# set date string
-today <- "2021-02-01"
+load(paste0(script_path, "coastal_phen.Rda"))
 
 ### Quality Control ----
 
@@ -211,7 +208,7 @@ coastal_phen_base_phase_temp <- MCMCglmm(cbind(prior_visit, doy) ~
                               family = "cengaussian",
                               nitt = 20000)
 summary(coastal_phen_base_phase_temp)
-save(coastal_phen_base_phase_temp, file = paste0("models/", today, "_coastal_phen_base_phase_temp.Rda"))
+save(coastal_phen_base_phase_temp, file = paste0(script_path, "models/2018-06-19_coastal_phen_base_phase_temp.Rda"))
 # plot(coastal_phen_base)
 # Sweet! Hypotheses are met! Let's continue with the more refined models.
 # We need to actually account for the whole hierachichal structure.
@@ -224,7 +221,7 @@ coastal_phen_base_temp_unmodified <- MCMCglmm(cbind(prior_visit, doy) ~
                               family = "cengaussian",
                               nitt = 20000)
 summary(coastal_phen_base_temp_unmodified)
-save(coastal_phen_base_temp_unmodified, file = paste0("models/", today, "_coastal_phen_base_temp_unmodified.Rda"))
+save(coastal_phen_base_temp_unmodified, file = paste0(script_path, "models/2018-06-19_coastal_phen_base_temp_unmodified.Rda"))
 
 # And spring temperature
 coastal_phen_base_unmodified <- MCMCglmm(cbind(prior_visit, doy) ~ 
@@ -246,7 +243,7 @@ coastal_phen_single_snow <- MCMCglmm(cbind(prior_visit, doy) ~
                                       nitt = 20000,
                                       pr = T) # Returns full distributions 
 summary(coastal_phen_single_snow)
-save(coastal_phen_single_snow, file = paste0("models/", today, "_coastal_phen_single_snow.Rda"))
+save(coastal_phen_single_snow, file = paste0(script_path, "models/2018-09-21_coastal_phen_single_snow.Rda"))
 
 # Snomwlet average
 coastal_phen_single_snow_average <- MCMCglmm(cbind(prior_visit, doy) ~ 
@@ -258,7 +255,7 @@ coastal_phen_single_snow_average <- MCMCglmm(cbind(prior_visit, doy) ~
                                      nitt = 20000,
                                      pr = T) # Returns full distributions 
 summary(coastal_phen_single_snow_average)
-save(coastal_phen_single_snow_average, file = paste0("models/", today, "_coastal_phen_single_snow_average.Rda"))
+save(coastal_phen_single_snow_average, file = paste0(script_path, "models/2018-09-21_coastal_phen_single_snow_average.Rda"))
 
 
 # Temperature
@@ -271,7 +268,7 @@ coastal_phen_single_phase_temp <- MCMCglmm(cbind(prior_visit, doy) ~
                                       nitt = 20000,
                                       pr = T) # Returns full distributions 
 summary(coastal_phen_single_phase_temp)
-save(coastal_phen_single_phase_temp, file = paste0("models/", today, "_coastal_phen_single_phase_temp.Rda"))
+save(coastal_phen_single_phase_temp, file = paste0(script_path, "models/2018-09-21_coastal_phen_single_phase_temp.Rda"))
 
 
 # Temperature unmodified
@@ -284,7 +281,7 @@ coastal_phen_single_phase_temp_unmodified <- MCMCglmm(cbind(prior_visit, doy) ~
                                       nitt = 20000,
                                       pr = T) # Returns full distributions 
 summary(coastal_phen_single_phase_temp_unmodified)
-save(coastal_phen_single_phase_temp_unmodified, file = paste0("models/", today, "_coastal_phen_single_phase_temp_unmodified.Rda"))
+save(coastal_phen_single_phase_temp_unmodified, file = paste0(script_path, "models/2018-09-21_coastal_phen_single_phase_temp_unmodified.Rda"))
 
 # Spring Temperature 
 coastal_phen_single_spring_temp <- MCMCglmm(cbind(prior_visit, doy) ~ 
@@ -296,7 +293,7 @@ coastal_phen_single_spring_temp <- MCMCglmm(cbind(prior_visit, doy) ~
                                       nitt = 20000,
                                       pr = T) # Returns full distributions 
 summary(coastal_phen_single_spring_temp)
-save(coastal_phen_single_spring_temp, file = paste0("models/", today, "_coastal_phen_single_spring_temp.Rda"))
+save(coastal_phen_single_spring_temp, file = paste0(script_path, "models/2018-09-21_coastal_phen_single_spring_temp.Rda"))
 
 # Sea-ice Onset Melt
 coastal_phen_single_onset_melt <- MCMCglmm(cbind(prior_visit, doy) ~ 
@@ -308,7 +305,7 @@ coastal_phen_single_onset_melt <- MCMCglmm(cbind(prior_visit, doy) ~
                                       nitt = 20000,
                                       pr = T) # Returns full distributions 
 summary(coastal_phen_single_onset_melt)
-save(coastal_phen_single_onset_melt, file = paste0("models/", today, "_coastal_phen_single_onset_melt.Rda"))
+save(coastal_phen_single_onset_melt, file = paste0(script_path, "models/2018-09-21_coastal_phen_single_onset_melt.Rda"))
 
 # Sea-ice Spring Extent
 coastal_phen_single_spring_extent<- MCMCglmm(cbind(prior_visit, doy) ~ 
@@ -320,7 +317,7 @@ coastal_phen_single_spring_extent<- MCMCglmm(cbind(prior_visit, doy) ~
                                          nitt = 20000,
                                          pr = T) # Returns full distributions 
 summary(coastal_phen_single_spring_extent)
-save(coastal_phen_single_spring_extent, file = paste0("models/", today, "_coastal_phen_single_spring_extent.Rda"))
+save(coastal_phen_single_spring_extent, file = paste0(script_path, "models/2018-09-21_coastal_phen_single_spring_extent.Rda"))
 
 #plot(coastal_phen_onset_melt_temp)
 
@@ -354,7 +351,7 @@ coastal_phen_rslopes_full_phen_temp <- MCMCglmm(cbind(prior_visit, doy) ~
                                       nitt = 20000, #1200000,
                                       prior = pa_prior,
                                       pr = T) # Returns full distributions
-save(coastal_phen_rslopes_full_phen_temp , file = paste0("models/", today, "_coastal_phen_rslopes_full_phen_temp.Rda"))
+save(coastal_phen_rslopes_full_phen_temp , file = paste0(script_path, "models/2018-06-19_coastal_phen_rslopes_full_phen_temp.Rda"))
 
 
 # # Run 4 models in parallel to estimate Gelman Rubin criterion
@@ -419,7 +416,7 @@ coastal_phen_rslopes_full_spring_extent <- MCMCglmm(cbind(prior_visit, doy) ~
                                                nitt = 20000,#1200000,
                                                prior = pa_prior,
                                                pr = T) # Returns full distributions
-save(coastal_phen_rslopes_full_spring_extent, file = paste0("models/", today, "_coastal_phen_rslopes_full_spring_extent.Rda"))
+save(coastal_phen_rslopes_full_spring_extent, file = paste0(script_path, "models/2018-06-19_coastal_phen_rslopes_full_spring_extent.Rda"))
 
 #### Now run with unmodified phase temp
 coastal_phen_rslopes_full_phen_temp_unmodified <- MCMCglmm(cbind(prior_visit, doy) ~
@@ -438,7 +435,7 @@ coastal_phen_rslopes_full_phen_temp_unmodified <- MCMCglmm(cbind(prior_visit, do
                                       nitt = 20000, #1200000,
                                       prior = pa_prior,
                                       pr = T) # Returns full distributions
-save(coastal_phen_rslopes_full_phen_temp_unmodified, file = paste0("models/", today, "_coastal_phen_rslopes_full_phen_temp_unmodified.Rda"))
+save(coastal_phen_rslopes_full_phen_temp_unmodified, file = paste0(script_path, "models/2018-06-19_coastal_phen_rslopes_full_phen_temp_unmodified.Rda"))
 
 #### Now run with unmodified spring temp
 coastal_phen_rslopes_full_spring_temp <- MCMCglmm(cbind(prior_visit, doy) ~
@@ -457,7 +454,7 @@ coastal_phen_rslopes_full_spring_temp <- MCMCglmm(cbind(prior_visit, doy) ~
                                                            nitt = 20000, #1200000,
                                                            prior = pa_prior,
                                                            pr = T) # Returns full distributions
-save(coastal_phen_rslopes_full_spring_temp, file = paste0("models/", today, "_coastal_phen_rslopes_full_spring_temp.Rda"))
+save(coastal_phen_rslopes_full_spring_temp, file = paste0(script_path, "models/2018-06-19_coastal_phen_rslopes_full_spring_temp.Rda"))
 
 ### Now run with snowmelt site averages
 coastal_phen_rslopes_full_snowmelt_averages <- MCMCglmm(cbind(prior_visit, doy) ~
@@ -476,49 +473,49 @@ coastal_phen_rslopes_full_snowmelt_averages <- MCMCglmm(cbind(prior_visit, doy) 
                                                 nitt = 1200000,
                                                 prior = pa_prior,
                                                 pr = T) # Returns full distributions
-save(coastal_phen_rslopes_full_snowmelt_averages  , file = paste0("models/", today, "_coastal_phen_rslopes_full_snowmlet_averages.Rda"))
+save(coastal_phen_rslopes_full_snowmelt_averages  , file = paste0(script_path, "models/2018-09-21_coastal_phen_rslopes_full_snowmlet_averages.Rda"))
 
 
-# Run 4 models in parallel to estimate Gelman Criterion:
-# Create Cluster
-cluster_one <-  makeCluster(4,type="SOCK", outfile  = "clusterMCMCglmm_unmodified.log")
-
-# Export dataset and priors to cluster
-clusterExport(cluster_one, "coastal_phen")
-clusterExport(cluster_one, "pa_prior")
-registerDoSNOW(cluster_one)
-# Run 4 models in parallel
-models_unmodified <- clusterApply(cluster_one, 1:4, function(i){
-  MCMCglmm::MCMCglmm(cbind(prior_visit, doy) ~
-                       snowmelt_rel_scaled +
-                       phase_temp_unmodified_rel_scaled +
-                       onset_ice_melt_rel_scaled +
-                       year_rel_scaled,
-                     random = ~ us(1 + snowmelt_rel_scaled +
-                                     phase_temp_unmodified_rel_scaled +
-                                     onset_ice_melt_rel_scaled +
-                                     year_rel_scaled
-                     ):site_spp_phen +
-                       site_name + plot_id + year_fac + site_name:year_fac,
-                     data = coastal_phen,
-                     family = "cengaussian",
-                     nitt = 1200000,
-                     prior = pa_prior,
-                     pr = T)
-})
-# stop cluster
-stopCluster(cluster_one)
-
-save(models_unmodified, file = paste0("models/", today, "_coastal_phen_rslopes_unmodified_4models_2018-03-21.Rda"))
-# Extract SOL (solutions chains) objects from models
-models_sol <- lapply(models_unmodified, function(m) m$Sol)
-
-# convert into MCMC.list object
-models_mcmc_list <- as.mcmc.list(models_sol)
-
-# prep plot space
-par(mfrow= c(4,2), mar = c(2,2,1,2))
-gelman.plot(models_mcmc_list, auto.layout = F)
-gelman <- gelman.diag(models_mcmc_list)
-save(gelman, file = paste0("models/", today, "_gelman_outputs_unmodified.Rda"))
+# # Run 4 models in parallel to estimate Gelman Criterion:
+# # Create Cluster
+# cluster_one <-  makeCluster(4,type="SOCK", outfile  = paste0(script_path, "clusterMCMCglmm_unmodified.log"))
+# 
+# # Export dataset and priors to cluster
+# clusterExport(cluster_one, "coastal_phen")
+# clusterExport(cluster_one, "pa_prior")
+# registerDoSNOW(cluster_one)
+# # Run 4 models in parallel
+# models_unmodified <- clusterApply(cluster_one, 1:4, function(i){
+#   MCMCglmm::MCMCglmm(cbind(prior_visit, doy) ~
+#                        snowmelt_rel_scaled +
+#                        phase_temp_unmodified_rel_scaled +
+#                        onset_ice_melt_rel_scaled +
+#                        year_rel_scaled,
+#                      random = ~ us(1 + snowmelt_rel_scaled +
+#                                      phase_temp_unmodified_rel_scaled +
+#                                      onset_ice_melt_rel_scaled +
+#                                      year_rel_scaled
+#                      ):site_spp_phen +
+#                        site_name + plot_id + year_fac + site_name:year_fac,
+#                      data = coastal_phen,
+#                      family = "cengaussian",
+#                      nitt = 1200000,
+#                      prior = pa_prior,
+#                      pr = T) 
+# })
+# # stop cluster
+# stopCluster(cluster_one)
+# 
+# save(models_unmodified, file = paste0(script_path, "models/2018-06-17_coastal_phen_rslopes_unmodified_4models_2018-03-21.Rda"))
+# # Extract SOL (solutions chains) objects from models
+# models_sol <- lapply(models_unmodified, function(m) m$Sol)
+# 
+# # convert into MCMC.list object
+# models_mcmc_list <- as.mcmc.list(models_sol) 
+# 
+# # prep plot space
+# par(mfrow= c(4,2), mar = c(2,2,1,2))
+# gelman.plot(models_mcmc_list, auto.layout = F)
+# gelman <- gelman.diag(models_mcmc_list)
+# save(gelman, file = paste0(script_path, "models/2018-06-18_gelman_outputs_unmodified.Rda"))
 

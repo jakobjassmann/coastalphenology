@@ -61,7 +61,7 @@ model_summary <- data.frame(
   
 )
 
-write.csv("analysis/new_analysis/model_summary.csv")
+write.csv(model_summary, paste0(script_path, "/unmodified/model_summary.csv"))
 
 ## Set colour themes
 # There are four sites
@@ -391,7 +391,7 @@ plot_grob <- grid.arrange(ALEXFIORD_spp_effect_size_plot,
                           QHI_spp_effect_size_plot, 
                           ZACKENBERG_spp_effect_size_plot,
                           layout_matrix = panel_layout)
-ggsave(filename = "analysis/new_analysis/coastal_spp_effect_size_plot.png", 
+ggsave(filename = paste0(script_path, "/unmodified/coastal_spp_effect_size_plot.png"), 
        plot = plot_grob, scale = 1.7, 
        width = 10, 
        height = (10/3), 
@@ -457,25 +457,25 @@ violin_plot <- ggplot(data = violin_data, aes(x = predictor, y = effect_size, fi
         axis.title = element_text(size = 20),
         legend.position = "none")
 
-ggsave("analysis/new_analysis/coastal_phen_violin.png", violin_plot)
+ggsave(paste0(script_path, "/unmodified/coastal_phen_violin.png"), violin_plot)
 
 # Export effect sizes in tabular format
 post_dists_export <- post_dists_total %>% filter(effect_size != 0)
 write.csv(post_dists_export[order(post_dists_export$predictor),], 
-          file = "analysis/new_analysis/post_dists.csv", row.names = F)
+          file = paste0(script_path, "/unmodified/post_dists.csv"), row.names = F)
 
 # Export table of all site spp phen combinations with associated colours
-# colour_export <- colour_theme_spp_phen[colour_theme_spp_phen$colour != "#FFFFFF00",-2]
-# itex.data <- read.csv("scripts/users/jassmann/phenology/phenology_data/ITEX_data_Janet/CCIN12722_20171116_Arctic_phenology_database_1992-2014.csv")
-# colour_export$species <- sapply(substr(colour_export$spp_phen, 1, 6),
-#                                 function(x) {as.character(first(itex.data[itex.data$spp == x,]$species))})
-# colour_export$genus <- sapply(substr(colour_export$spp_phen, 1, 6),
-#                               function(x) {as.character(first(itex.data[itex.data$spp == x,]$genus))})
-# colour_export$phen_stage <- substring(colour_export$spp_phen, 8)
-# colour_export <- colour_export[,c(1,4,5,6,3)]
-# write.csv(colour_export,
-#           file = paste0(script_path, "/unmodified/site_spp_phen_colour.csv"),
-#           row.names = F)
+colour_export <- colour_theme_spp_phen[colour_theme_spp_phen$colour != "#FFFFFF00",-2]
+itex.data <- read.csv("scripts/users/jassmann/phenology/phenology_data/ITEX_data_Janet/CCIN12722_20171116_Arctic_phenology_database_1992-2014.csv")
+colour_export$species <- sapply(substr(colour_export$spp_phen, 1, 6),
+                                function(x) {as.character(first(itex.data[itex.data$spp == x,]$species))})
+colour_export$genus <- sapply(substr(colour_export$spp_phen, 1, 6),
+                              function(x) {as.character(first(itex.data[itex.data$spp == x,]$genus))})
+colour_export$phen_stage <- substring(colour_export$spp_phen, 8)
+colour_export <- colour_export[,c(1,4,5,6,3)]
+write.csv(colour_export,
+          file = paste0(script_path, "/unmodified/site_spp_phen_colour.csv"),
+          row.names = F)
 
 # Make a pretty legend plot
 colour_export[colour_export$phen_stage == "green_up",]$phen_stage <- "green up"
@@ -554,7 +554,7 @@ plot_grob <- grid.arrange(ALEXFIORD_legend_plot,
                           QHI_legend_plot, 
                           ZACKENBERG_legend_plot,
                           layout_matrix = panel_layout)
-ggsave(filename = "analysis/new_analysis/unmodified/coastal_legend.png",
+ggsave(filename = paste0(script_path, "/unmodified/coastal_legend.png"),
        plot = plot_grob, 
        scale = 1.7, 
        width = 10, 
