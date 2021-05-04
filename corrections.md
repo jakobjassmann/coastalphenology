@@ -83,7 +83,7 @@ For our anlaysis in Assmann et al. 2019, we used the daily regional sea-ice exte
 
 __Figure 3__: The coding error had a very small effect on the estimated annual spring drop in sea-ice (Day of Year) for each region. Blue lines and points show the original estimates derieved with the error and red lines and points show the new estimates with the error corrected. 
 
-We have updated the dataset preparation script and the prepared datasets on the repository. The original (submitted) script and dataset can be found here:
+We have updated the dataset preparation script and the prepared dataset on the repository. The original (submitted) script and dataset can be found here:
 
 ``` R
 data/dataset_prep_old.R
