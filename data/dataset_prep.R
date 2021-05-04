@@ -22,10 +22,10 @@ qhi_temp <- read.csv("data/temperature_data/qhi/qhi_daily_temp.csv")
 zackenberg_temp <- read.csv("data/temperature_data/zackenberg/zackenberg_daily_temp.csv")
 
 # Import sea ice data
-alexfiord_sea_ice <- read.csv("data/sea_ice_data/alexfiord/alexfiord_sea_ice_extent_new.csv")
-barrow_sea_ice <- read.csv("data/sea_ice_data/barrow/barrow_sea_ice_extent_new.csv")
-qhi_sea_ice <- read.csv("data/sea_ice_data/qhi/qhi_sea_ice_new.csv")
-zackenberg_sea_ice <- read.csv("data/sea_ice_data/zackenberg/zackenberg_sea_ice_extent_new.csv")
+alexfiord_sea_ice <- read.csv("data/sea_ice_data/alexfiord/alexfiord_sea_ice_extent.csv")
+barrow_sea_ice <- read.csv("data/sea_ice_data/barrow/barrow_sea_ice_extent.csv")
+qhi_sea_ice <- read.csv("data/sea_ice_data/qhi/qhi_sea_ice.csv")
+zackenberg_sea_ice <- read.csv("data/sea_ice_data/zackenberg/zackenberg_sea_ice_extent.csv")
 
 ### Prepare temperature data
 extract_temperature <- function(site_name) {
@@ -208,7 +208,7 @@ extract_sea_ice <- function(site_name){
                        panel.border = element_rect(colour = "black"),
                        axis.title = element_text(size = 30),
                        plot.title = element_text(size = 30)) 
-  ggsave(paste0(script_path, "sea_ice_data/", site_name, "/", site_name, "_sea_ice_new.png"), width = 16, height = 8)
+  ggsave(paste0(script_path, "sea_ice_data/", site_name, "/", site_name, "_sea_ice.png"), width = 16, height = 8)
  
   # spring (may june july) average
   onset_sea_ice_melt$spring_extent <- sea_ice_data %>%
@@ -287,8 +287,8 @@ coastal_phen$year_fac <- factor(coastal_phen$year)
 coastal_phen <- coastal_phen[c(1,2,3,4,5,6,7,23,seq(8,22))]
 
 # export data
-save(coastal_phen, file = paste0(script_path, "coastal_phen_new.Rda"))
-write.csv(coastal_phen, file = paste0(script_path, "coastal_phen_new.csv"), row.names = F)
+save(coastal_phen, file = paste0(script_path, "coastal_phen.Rda"))
+write.csv(coastal_phen, file = paste0(script_path, "coastal_phen.csv"), row.names = F)
 
 # Plot mean of all variables for each phenostage for QC
 mean_phenology <- coastal_phen %>% group_by(site_spp_phen) %>% summarise(mean_phenology = mean(doy, na.rm = T))
