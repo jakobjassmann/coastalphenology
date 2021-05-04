@@ -8,7 +8,6 @@ library(lattice)
 library(ncdf4)
 library(dplyr)
 library(ggplot2)
-library(raster)
 
 # Housekeeping: set folder paths and meta_variables
 script_path <- "scripts/users/jassmann/phenology/sea_ice_data/alexfiord//"
@@ -18,12 +17,11 @@ site_name <- "alexfiord"
 site_lat_lon <- c(78.88, -75.92) # Alexfiord ITEX site
 
 # Polar Stereographic Grid Pixel Area File (binary)
-pixel_area_file <- "D:/_TemporaryUserFiles/JakobAssmann/CandiceSeaIce/NSIDC_CDR/psn25area_v3.dat"
+pixel_area_file <- "scripts/users/jassmann/phenology/sea_ice_data/psn25area_v3.dat"
 
 # NSIDC CDR folder path
 # folder_path <- "/Volumes/csce/biology/users/s1043792/sea_ice/nsidc_cdr_v3/"
-folder_path <- "D:/_TemporaryUserFiles/JakobAssmann/CandiceSeaIce/NSIDC_CDR/daily/"
-
+folder_path <- "M:/sea_ice/nsidc_cdr_v3/"
 
 # NB Site Mask needs to be specified and edited manually (Line 200)
 
@@ -93,13 +91,13 @@ y_range <- c(centre_index[2] - 10, centre_index[2] + 10)
 ### Load pixel area data from binary file. 
 #####
 # prep matrix for storing data
-pixel_area_new <- matrix(nrow = 448, ncol = 304)
-# read in binary pixel area file
-to_read <- file(pixel_area_file, "rb")
+pixel_area <- matrix(nrow = 304, ncol = 448)
+# read in binary pixel area file (file path specified in header of this script)
+to_read <- file(pixel_area_file, "rb") 
 # read in pixel area values integer by integer
-for (i in 1:448){
-  for (j in 1:304){
-    pixel_area_new[i, j] <- readBin(to_read, integer(), endian = "little", size = 4) / 1000 
+for (i in 1:304){
+  for (j in 1:448){
+    pixel_area[i, j] <- readBin(to_read, integer(), endian = "little", size = 4) / 1000 
     # NB the "endian" setting is really important, all other files provided by the NSCID with the pixel area file (masks etc) have a little endian, so we can assume that applies to the pixel area file too (though not specified). Also tested big endian to be sure and results do not make sense!
   }
 }
@@ -110,9 +108,7 @@ readBin(to_read, integer(), endian = "little", size = 4)
 close(to_read)
 
 # check whether all values got read:
-pixel_area_new[448,304] # this is the final cell in the data set
-
-plot(raster(pixel_area_new))
+pixel_area[304,448] # this is the final cell in the data set
 # looks good!
 #####
 
@@ -212,7 +208,7 @@ fill_cells_df <- function(cells_df){
     cells_df$cell_id[i] <- paste0("x", cells_df$x_grid[i], "y", cells_df$y_grid[i] )
     cells_df$lat[i] <- lat[cells_df$x_grid[i], cells_df$y_grid[i]]
     cells_df$long[i] <- lon[cells_df$x_grid[i], cells_df$y_grid[i]]
-    cells_df$size[i] <- pixel_area_new[cells_df$y_grid[i], cells_df$x_grid[i]]
+    cells_df$size[i] <- pixel_area[cells_df$x_grid[i], cells_df$y_grid[i]]
   }
   return(cells_df)
 }
@@ -221,8 +217,8 @@ fill_cells_df <- function(cells_df){
 alexfiord_cells <- fill_cells_df(alexfiord_cells)
 
 # Export df as CSV and RDA
-write.csv(alexfiord_cells, paste0("data/sea_ice_data/alexfiord/alexfiord_cells_new.csv"))
-save(alexfiord_cells, file = paste0("data/sea_ice_data/alexfiord/alexfiord_cells_new.Rda"))
+write.csv(alexfiord_cells, paste0(script_path, "alexfiord_cells.csv"))
+save(alexfiord_cells, file = paste0(script_path, "alexfiord_cells.Rda"))
 #####
 
 ### Now clean up before extracting data across all years
@@ -235,7 +231,7 @@ rm(list = ls())
 #####
 
 # Load cell data (mask)
-load("data/sea_ice_data/alexfiord/alexfiord_cells_new.Rda")
+load(paste0(script_path, site_name, "_cells.Rda"))
 
 # Load list of NetCDF files (CDR record downloaded from NSCID)
 # folder_path specified in header
@@ -317,25 +313,25 @@ sea_ice_extent$site_name <- toupper(site_name)
 sea_ice_extent <- sea_ice_extent[c(7,1:6)]
 
 # write to csv and rdata
-write.csv(sea_ice_extent, "data/sea_ice_data/alexfiord/alexfiord_sea_ice_extent_new.csv")
-save(sea_ice_extent, file = "data/sea_ice_data/alexfiord/alexfiord_sea_ice_extent_new.Rda")
+write.csv(sea_ice_extent, paste0(script_path, site_name, "_sea_ice_extent.csv"))
+save(sea_ice_extent, file = paste0(script_path, site_name, "_sea_ice_extent.Rda"))
 
 # For some reason all but the date columns in the sea_ice_extent data frame are saved as factors!
 # This is structure is saved in the RData file. :/
-load("data/sea_ice_data/alexfiord/alexfiord_sea_ice_extent_new.Rda")
+load(paste0(script_path, site_name, "_sea_ice_extent.Rda"))
 str(sea_ice_extent)
 # Let's fix that!
 
 # A quick hack to quickly do the conversion is by loading the CSV isntead
-sea_ice_extent <- read.csv("data/sea_ice_data/alexfiord/alexfiord_sea_ice_extent_new.csv")
+sea_ice_extent <- read.csv(paste0(script_path, site_name, "_sea_ice_extent.csv"))
 str(sea_ice_extent)
 
 # get rid of the first column
-sea_ice_extent <- sea_ice_extent %>% dplyr::select(-X)
+sea_ice_extent <- sea_ice_extent %>% select(-X)
 sea_ice_extent$date <- as.Date(sea_ice_extent$date)
 
 # save the data without the collumns being factors
-save(sea_ice_extent, file = "data/sea_ice_data/alexfiord/alexfiord_sea_ice_extent_new.Rda")
+save(sea_ice_extent, file = paste0(script_path, site_name, "_sea_ice_extent.Rda"))
 
 ### DONE! :)
 #####
